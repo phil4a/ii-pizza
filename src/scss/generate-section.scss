@@ -1,0 +1,135 @@
+.generate {
+	padding-top: rem(40);
+	background-image: url(@img/pizza-gen_bg.jpg);
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: rem(30);
+		text-transform: uppercase;
+		font-family: $ttFont;
+		@include adaptiveValue('font-size', 40, 26);
+		line-height: math.div(56, 40);
+	}
+
+	&__prefs {
+		@include adaptiveValue('font-size', 20, 16);
+		font-weight: 600;
+	}
+
+	&__image {
+		max-width: rem(1000);
+		margin: 0 auto;
+		img {
+			width: 100%;
+		}
+	}
+
+	&__link {
+		font-family: $ttFont;
+		font-size: rem(16);
+		display: inline-block;
+		padding: rem(12) rem(35);
+		background-color: #ffb42c;
+		color: #fffefe;
+		border-radius: rem(15);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+				background-color: $accentColor;
+			}
+		}
+		@media (min-width: $tablet) {
+			font-size: rem(18);
+			padding: rem(16) rem(50);
+		}
+	}
+}
+.prefs {
+	&__list {
+		display: grid;
+		align-items: center;
+		grid-template-columns: repeat(auto-fill, minmax(rem(240), 1fr));
+		grid-auto-rows: auto;
+		row-gap: rem(25);
+		column-gap: rem(25);
+	}
+	&__radio {
+	}
+
+	&__custom {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+
+		+ label {
+			display: inline-flex;
+			align-items: center;
+			user-select: none;
+			transition: all 0.3s ease 0s;
+			line-height: math.div(30, 24);
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accentColor;
+				}
+			}
+		}
+		+ label::before {
+			content: '';
+			display: inline-block;
+			width: rem(30);
+			height: rem(30);
+			flex-shrink: 0;
+			flex-grow: 0;
+			border: 3px solid #adb5bd;
+			border-radius: 50%;
+			margin-right: rem(15);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 50% 50%;
+			transition: all 0.3s ease 0s;
+		}
+		&:not(:disabled):not(:checked) + label:hover::before {
+			border-color: #b3d7ff;
+		}
+		&:not(:disabled):active + label::before {
+			background-color: #b3d7ff;
+			border-color: #b3d7ff;
+		}
+		&:focus + label::before {
+			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+		}
+		&:focus:not(:checked) + label::before {
+			border-color: #80bdff;
+		}
+		&:checked + label::before {
+			border-color: #0b76ef;
+			background-color: #fff;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='4' fill='%230b76ef'/%3e%3c/svg%3e");
+		}
+	}
+
+	&__button {
+		background-color: $accentColor;
+		margin-top: rem(20);
+		margin-bottom: rem(55);
+		padding: rem(12) rem(35);
+		font-family: $ttFont;
+		@include adaptiveValue('font-size', 20, 16);
+		color: #fff;
+		border-radius: rem(15);
+		transition: all 0.8s ease 0s;
+		@media (min-width: $tablet) {
+			margin-top: rem(40);
+			margin-bottom: rem(15);
+			padding: rem(18) rem(50);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				text-shadow: 0px 0px 2px #000;
+				background-color: darken($accentColor, 20%);
+			}
+		}
+	}
+}

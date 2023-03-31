@@ -1,0 +1,67 @@
+<section class="generate">
+	<div class="generate__container">
+		<h2 class="generate__title">Создать свою пиццу</h2>
+		<form action="" class="generate__prefs prefs">
+			<div class="prefs__list">
+				<div class="prefs__radio">
+					<input
+						class="prefs__custom"
+						type="radio"
+						id="without"
+						name="ingredients"
+						value="without"
+						checked
+					/>
+					<label for="without">Без добавок</label>
+				</div>
+				<div class="prefs__radio">
+					<input
+						class="prefs__custom"
+						type="radio"
+						id="pepperoni"
+						name="ingredients"
+						value="pepperoni"
+					/>
+					<label for="pepperoni">Колбаски Пепперони</label>
+				</div>
+				<div class="prefs__radio">
+					<input
+						class="prefs__custom"
+						type="radio"
+						id="chicken"
+						name="ingredients"
+						value="chicken"
+					/>
+					<label for="chicken">С курицей</label>
+				</div>
+				<div class="prefs__radio">
+					<input
+						class="prefs__custom"
+						type="radio"
+						id="becon"
+						name="ingredients"
+						value="becon"
+					/>
+					<label for="becon">С беконом</label>
+				</div>
+				<div class="prefs__radio">
+					<input
+						class="prefs__custom"
+						type="radio"
+						id="meat"
+						name="ingredients"
+						value="meat"
+					/>
+					<label for="meat">Много мяса</label>
+				</div>
+			</div>
+			<button type="submit" class="prefs__button">Создать пиццу</button>
+		</form>
+		<!-- TODO Сделать выдачу раличных пицц. Т.е рандомно выдается 7 пицц пепперони, 7 мясных итд. -->
+		<!--TODO Сделать рандомный таймаут вывода картинки -->
+		<div class="generate__image"><img src="@img/pepper.png" alt="" /></div>
+		<a href="#" class="generate__link">Заказать</a>
+		<!--! Добавить "Воспользуйтесь промокодом GOLD - получите любую римскую пиццу в
+		подарок" -->
+	</div>
+</section>

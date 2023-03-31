@@ -1,0 +1,123 @@
+.howto {
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	background-image: url(@img/how-to_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	&__container {
+		padding: rem(50) 0;
+		display: flex;
+		flex-direction: column-reverse;
+		gap: rem(20);
+		@media (min-width: $tablet) {
+			display: flex;
+			flex-direction: row;
+			gap: 0;
+		}
+	}
+
+	&__pizza {
+		align-self: center;
+		flex: auto;
+		position: relative;
+		text-align: center;
+		opacity: 0;
+		left: rem(-200);
+		@media (min-width: $tablet) {
+			left: rem(-260);
+			flex: 0 1 rem(900);
+		}
+		img {
+			width: 90%;
+			@media (min-width: $tablet) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__text {
+		z-index: 1;
+		flex: auto;
+		align-self: center;
+		margin-left: 0;
+		padding: 0 rem(15);
+		position: relative;
+		left: rem(200);
+		opacity: 0;
+		@media (min-width: $tablet) {
+			flex: 1 0 rem(630);
+			margin-left: rem(-140);
+		}
+	}
+}
+.text-howto {
+	color: #fff;
+
+	&__title {
+		font-family: $ttFont;
+		font-size: rem(28);
+		line-height: math.div(39, 28);
+		margin-bottom: rem(20);
+	}
+
+	&__desc {
+		padding: rem(30) rem(30);
+		background: rgb(33, 151, 225);
+		background: linear-gradient(
+			180deg,
+			rgba(33, 151, 225, 0.9) 0%,
+			rgba(4, 50, 144, 0.7) 100%
+		);
+		border-radius: rem(15);
+		@media (min-width: $tablet) {
+			background: rgb(33, 151, 225);
+			background: linear-gradient(
+				180deg,
+				rgba(33, 151, 225, 1) 0%,
+				rgba(4, 50, 144, 1) 100%
+			);
+			border-radius: rem(30);
+			padding: rem(40) rem(50);
+		}
+	}
+	&__text {
+		font-size: rem(13);
+		line-height: math.div(18, 15);
+		@media (min-width: $tablet) {
+			font-size: rem(15);
+		}
+		p {
+			&:not(:last-child) {
+				margin-bottom: rem(23);
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		text-transform: uppercase;
+		@include adaptiveValue('max-width', 340, 260);
+		margin: rem(25) auto rem(0) auto;
+		margin-top: rem(25);
+		font-family: $ttFont;
+		font-size: rem(18);
+		@include adaptiveValue('font-size', 18, 14);
+		padding: rem(10) rem(20);
+		color: #115aaf;
+		border-radius: rem(8);
+		border: solid rem(1) #115aaf;
+		transition: all 0.3s ease 0s;
+		@media (min-width: $tablet) {
+			padding: rem(18) rem(40);
+			border-radius: rem(15);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #115aaf;
+				color: #fff;
+			}
+		}
+	}
+}

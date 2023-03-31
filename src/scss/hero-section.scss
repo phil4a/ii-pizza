@@ -1,0 +1,85 @@
+.hero {
+	margin-top: $headerHeight;
+	background-image: url(@img/hero/hero_bg.jpg);
+	background-repeat: no-repeat;
+	// background-position: center;
+	height: calc(100vh - $headerHeight);
+	// height: 100vh;
+	color: #fff;
+	position: relative;
+	z-index: 1;
+
+	&__container {
+		height: 100%;
+	}
+	&__pizza {
+		position: absolute;
+		z-index: 2;
+		top: rem(120);
+		@include adaptiveValue('top', 120, 100);
+		@include adaptiveValue('right', 280, -300);
+		@include adaptiveValue('width', 680, 500);
+	}
+	&__robot-hand {
+		position: absolute;
+		z-index: 0;
+		bottom: rem(-150);
+		@include adaptiveValue('bottom', -170, -110);
+		@include adaptiveValue('left', -55, 650, 400, 1800, 1);
+		@include adaptiveValue('width', 350, 250);
+	}
+	&__human-hand {
+		display: flex;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: rem(-120);
+		@include adaptiveValue('width', 550, 250);
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&__text {
+		position: relative;
+		z-index: 3;
+		height: calc(100% - $headerHeight);
+		display: flex;
+		gap: rem(50);
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	&__title {
+		width: 50%;
+		font-weight: 700;
+		@include adaptiveValue('font-size', 96, 26);
+		@include adaptiveValue('line-height', 117, 38);
+		text-transform: uppercase;
+	}
+
+	&__button {
+		padding: rem(30) rem(40);
+		@include adaptiveValue('padding-top', 30, 8);
+		@include adaptiveValue('padding-bottom', 30, 8);
+		@include adaptiveValue('padding-left', 40, 12);
+		@include adaptiveValue('padding-right', 40, 12);
+		background-color: #ffb42c;
+		@include adaptiveValue('border-radius', 20, 5);
+		font-weight: 700;
+		@include adaptiveValue('font-size', 26, 16);
+		line-height: math.div(32, 26);
+		text-align: center;
+		text-transform: uppercase;
+		max-width: 50%;
+		box-shadow: none;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #e49400;
+				box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.7);
+			}
+		}
+	}
+}
