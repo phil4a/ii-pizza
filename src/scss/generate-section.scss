@@ -16,7 +16,8 @@
 		@include adaptiveValue('font-size', 20, 16);
 		font-weight: 600;
 	}
-
+	&__pcs {
+	}
 	&__image {
 		max-width: rem(1000);
 		margin: 0 auto;
@@ -46,6 +47,46 @@
 		}
 	}
 }
+
+.pcs {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(50);
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__part {
+		img {
+			width: 70%;
+		}
+	}
+
+	&__pc1 {
+	}
+
+	&__pc2 {
+	}
+
+	&__pc3 {
+	}
+
+	&__pc4 {
+	}
+
+	&__pc5 {
+	}
+
+	&__pc6 {
+	}
+
+	&__pc7 {
+	}
+
+	&__pc8 {
+	}
+}
+
 .prefs {
 	&__list {
 		display: grid;

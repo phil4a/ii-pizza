@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger.js';
 gsap.registerPlugin(ScrollTrigger);
 
+//animation
 const tl = gsap.timeline({
 	scrollTrigger: {
 		start: 200,
@@ -42,5 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	tl.to('.howto__pizza', {
 		x: 200,
 		opacity: 1,
+	});
+});
+
+//generate form
+//animation
+const pcs = document.querySelectorAll('.pcs__part');
+
+pcs.forEach(pc => {
+	const rotating = gsap.timeline({});
+
+	rotating.to(pc, {
+		ease: 'none',
+		rotation: 360,
+		duration: 8,
+		repeat: -1,
+	});
+
+	const createButton = document.querySelector('.prefs__button');
+
+	createButton.addEventListener('click', e => {
+		e.preventDefault();
+
+		rotating.reverse();
 	});
 });
