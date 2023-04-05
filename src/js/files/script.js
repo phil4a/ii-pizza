@@ -73,8 +73,6 @@ const pcs = document.querySelectorAll('.pcs__part');
 // 	});
 // });
 
-const pc1 = document.querySelector('.pcs__pc1');
-
 const makePizza = () => {
 	const pc1 = document.querySelector('.pcs__pc1');
 	const pc2 = document.querySelector('.pcs__pc2');
@@ -84,54 +82,41 @@ const makePizza = () => {
 	const pc6 = document.querySelector('.pcs__pc6');
 	const pc7 = document.querySelector('.pcs__pc7');
 	const pc8 = document.querySelector('.pcs__pc8');
-
-	mm.add(
-		{
-			isDesktop: `(min-width: ${breakPoint}px)`,
-			isMobile: `(max-width: ${breakPoint - 1}px)`,
-			reduceMotion: '(prefers-reduced-motion: reduce)',
-		},
-		context => {
-			let { isDesktop, isMobile, reduceMotion } = context.conditions;
-
-			gsap.to(pc1, {
-				ease: 'none',
-				duration: 1,
-				x: isDesktop
-					? function () {
-							if (
-								document.documentElement.scrollWidth >=
-								pizzaContainer.offsetWidth
-							) {
-								return (pizzaContainer.offsetWidth / 2 - 30).toString();
-							} else {
-								return (pizzaContainer.offsetWidth / 2 - 30).toString();
-							}
-					  }
-					: '50vw',
-			});
-			gsap.to(pc8, {
-				ease: 'none',
-				duration: 1,
-				translateY: '-100%',
-				x: isDesktop
-					? function () {
-							if (
-								document.documentElement.scrollWidth >=
-								pizzaContainer.offsetWidth
-							) {
-								return (-pizzaContainer.offsetWidth / 2).toString();
-							} else {
-								return '-50vw';
-							}
-					  }
-					: function () {
-							return (-pizzaContainer.offsetWidth / 2).toString();
-					  },
-			});
-
-			return () => {};
-		}
+	console.log(
+		`width`,
+		pc1.offsetWidth + pc2.offsetWidth + pc3.offsetWidth + pc4.offsetWidth
 	);
+
+	gsap.to(pc1, {
+		ease: 'none',
+		duration: 1,
+		x: function () {
+			return (pizzaContainer.offsetWidth / 2 - 15).toString();
+		},
+	});
+	//!Тут посмотреть какую формулу
+	gsap.to(pc2, {
+		ease: 'none',
+		duration: 1,
+		y: '25%',
+		x: function () {
+			return (pizzaContainer.offsetWidth / 4).toString();
+		},
+	});
+	gsap.to(pc7, {
+		ease: 'none',
+		duration: 1,
+		translateY: '-50%',
+		x: `-100%`,
+	});
+
+	gsap.to(pc8, {
+		ease: 'none',
+		duration: 1,
+		translateY: '-100%',
+		x: function () {
+			return (-pizzaContainer.offsetWidth / 2 + 15).toString();
+		},
+	});
 };
 makePizza();

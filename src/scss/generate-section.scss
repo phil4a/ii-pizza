@@ -19,7 +19,7 @@
 	&__pcs {
 	}
 	&__image {
-		max-width: rem(1000);
+		// max-width: rem(1000);
 		margin: 0 auto;
 		img {
 			width: 100%;
@@ -49,7 +49,6 @@
 }
 
 .pcs {
-	margin: rem(80) 0;
 	display: flex;
 	flex-direction: column;
 	// row-gap: rem(100);
@@ -61,6 +60,7 @@
 	}
 	&__part {
 		position: relative;
+
 		img {
 			width: 100%;
 		}
