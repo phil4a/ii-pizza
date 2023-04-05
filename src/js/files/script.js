@@ -94,7 +94,7 @@ const makePizza = () => {
 			return (pizzaContainer.offsetWidth / 2 - 15).toString();
 		},
 	});
-	//!Тут посмотреть какую формулу
+	//!Тут посмотреть какую формулу!
 	gsap.to(pc2, {
 		ease: 'none',
 		duration: 1,
