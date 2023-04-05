@@ -49,20 +49,25 @@
 }
 
 .pcs {
+	margin: rem(80) 0;
 	display: flex;
 	flex-direction: column;
-	row-gap: rem(50);
+	// row-gap: rem(100);
+
 	&__row {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 	}
 	&__part {
+		position: relative;
 		img {
-			width: 70%;
+			width: 100%;
 		}
 	}
 
 	&__pc1 {
+		position: relative;
 	}
 
 	&__pc2 {
