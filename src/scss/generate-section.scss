@@ -54,13 +54,10 @@
 	// row-gap: rem(100);
 
 	&__row {
-		position: relative;
 		display: flex;
 		justify-content: space-between;
 	}
 	&__part {
-		position: relative;
-
 		img {
 			width: 100%;
 		}
