@@ -1,7 +1,17 @@
+#pizza {
+}
+
 .generate {
+	margin: rem(50) 0;
 	padding-top: rem(40);
 	background-image: url(@img/pizza-gen_bg.jpg);
 	&__container {
+	}
+
+	&__pizza {
+		position: relative;
+	}
+	&__overlay {
 	}
 
 	&__title {
@@ -19,8 +29,8 @@
 	&__pcs {
 	}
 	&__image {
-		// max-width: rem(1000);
-		margin: 0 auto;
+		display: none;
+		max-width: rem(680);
 		img {
 			width: 100%;
 		}
@@ -29,7 +39,8 @@
 	&__link {
 		font-family: $ttFont;
 		font-size: rem(16);
-		display: inline-block;
+		// display: inline-block;
+		display: none;
 		padding: rem(12) rem(35);
 		background-color: #ffb42c;
 		color: #fffefe;
@@ -51,7 +62,7 @@
 .pcs {
 	display: flex;
 	flex-direction: column;
-	// row-gap: rem(100);
+	row-gap: rem(100);
 
 	&__row {
 		display: flex;
