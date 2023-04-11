@@ -32,6 +32,6 @@ export const pizzaObj = [
 		id: 'meat',
 		name: 'Мясная',
 		url: ['/img/generate/pizza/meat-1.png'],
-		link: 'https://pizzato.rest/catalog/41',
+		link: 'https://pizzato.rest/catalog/32',
 	},
 ];

@@ -1,6 +1,7 @@
 import { pizzaObj } from './pizza.js';
 
 export const imageGenerate = () => {
+	let generateLink = document.querySelector('.generate__link');
 	let generateImgSrc = document.querySelector('.generate__image');
 	const checkedInputValue = document.querySelector(
 		'.prefs__custom:checked'
@@ -14,6 +15,6 @@ export const imageGenerate = () => {
 
 	setTimeout(() => {
 		generateImgSrc.setAttribute('src', getRandomElement(findedEl.url));
+		generateLink.setAttribute('href', findedEl.link);
 	}, 3000);
 };
-imageGenerate();

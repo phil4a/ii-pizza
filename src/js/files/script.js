@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const generatePizza = () => {
 		const getRandomInt = () => {
-			return Math.floor(Math.random() * (13 - 7)) + 7;
+			return Math.floor(Math.random() * (8 - 4)) + 4;
 		};
 
 		wrapperBlur.classList.toggle('wrapper-overlay');
