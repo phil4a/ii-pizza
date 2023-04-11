@@ -1,4 +1,10 @@
 #pizza {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 200;
+	transform: translate(-50%, -50%);
 }
 
 .generate {
@@ -9,9 +15,6 @@
 	}
 
 	&__pizza {
-		position: relative;
-	}
-	&__overlay {
 	}
 
 	&__title {
@@ -28,18 +31,21 @@
 	}
 	&__pcs {
 	}
-	&__image {
-		display: none;
-		max-width: rem(680);
-		img {
-			width: 100%;
+	&__block {
+		margin: 0 auto;
+		max-width: rem(0);
+		transition: all 2s ease 0s;
+		&-show {
+			max-width: rem(700);
 		}
+	}
+	&__image {
+		width: 100%;
 	}
 
 	&__link {
 		font-family: $ttFont;
 		font-size: rem(16);
-		// display: inline-block;
 		display: none;
 		padding: rem(12) rem(35);
 		background-color: #ffb42c;

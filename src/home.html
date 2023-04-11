@@ -2,19 +2,20 @@
 <html lang="ru">
 	@@include('html/_head.htm',{ "title":"Главная" })
 	<body>
-		<div class="overlay">
-			<div class="wrapper">
-				@@include('html/_header.htm',{})
-				<main class="page">
-					@@include('html/_hero-section.htm',{})
-					@@include('html/_howto-section.htm',{})
-					@@include('html/_generate-section.htm',{})
-					@@include('html/_process-section.htm',{})
-					@@include('html/_grandson-section.htm',{})
-				</main>
-				@@include('html/_footer.htm',{})
-			</div>
+		<canvas id="pizza"></canvas>
+		<div class="overlay"></div>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				@@include('html/_hero-section.htm',{})
+				@@include('html/_howto-section.htm',{})
+				@@include('html/_generate-section.htm',{})
+				@@include('html/_process-section.htm',{})
+				@@include('html/_grandson-section.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
 		</div>
+
 		@@include('html/_popup.htm') @@include('html/_js.htm',{})
 	</body>
 </html>

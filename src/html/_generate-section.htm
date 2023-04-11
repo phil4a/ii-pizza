@@ -7,12 +7,12 @@
 					<input
 						class="prefs__custom"
 						type="radio"
-						id="without"
+						id="margo"
 						name="ingredients"
-						value="without"
+						value="margo"
 						checked
 					/>
-					<label for="without">Без добавок</label>
+					<label for="margo">Без добавок</label>
 				</div>
 				<div class="prefs__radio">
 					<input
@@ -38,11 +38,11 @@
 					<input
 						class="prefs__custom"
 						type="radio"
-						id="becon"
+						id="bologna"
 						name="ingredients"
-						value="becon"
+						value="bologna"
 					/>
-					<label for="becon">С беконом</label>
+					<label for="bologna">С беконом</label>
 				</div>
 				<div class="prefs__radio">
 					<input
@@ -58,9 +58,11 @@
 			<button type="submit" class="prefs__button">Создать пиццу</button>
 		</form>
 		<div class="generate__pizza">
-			<div class="generate__image"><img src="@img/pepper.png" alt="" /></div>
+			<div class="generate__block">
+				<img class="generate__image" src="#" alt="" />
+			</div>
 		</div>
-		<canvas id="pizza"></canvas>
+
 		<a href="#" class="generate__link">Заказать</a>
 	</div>
 </section>
