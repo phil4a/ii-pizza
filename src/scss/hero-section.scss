@@ -16,9 +16,19 @@
 		position: absolute;
 		z-index: 2;
 		top: rem(120);
-		@include adaptiveValue('top', 120, 100);
-		@include adaptiveValue('right', 280, -300);
+		// @include adaptiveValue('top', 120, 100);
+		top: rem(120);
+		// @include adaptiveValue('right', 280, -300);
+		right: rem(280);
 		@include adaptiveValue('width', 680, 500);
+		@media (max-width: rem(1600)) {
+			top: rem(-46);
+			right: rem(36);
+		}
+		@media (max-width: $tablet) {
+			top: rem(100);
+			right: rem(-300);
+		}
 	}
 	&__robot-hand {
 		position: absolute;
@@ -35,7 +45,7 @@
 		top: 0;
 		right: rem(-120);
 		@include adaptiveValue('width', 550, 250);
-		@media (max-width: $tablet) {
+		@media (max-width: rem(1600)) {
 			display: none;
 		}
 	}

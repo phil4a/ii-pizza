@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//global options
 	const wrapperBlur = document.querySelector('.wrapper');
 	const overlay = document.querySelector('.overlay');
-	const pizzaLoadImg = document.querySelector('#pizza');
+	const pizzaLoadBlock = document.querySelector('.pizza-loader');
 	const generateBlock = document.querySelector('.generate__block');
 	const generateLink = document.querySelector('.generate__link');
 	const generatePromoBlock = document.querySelector('.generate__promo-block');
@@ -77,14 +77,36 @@ document.addEventListener('DOMContentLoaded', () => {
 			return Math.floor(Math.random() * (8 - 4)) + 4;
 		};
 
+		let actualRndmNum = getRandomInt();
+
 		wrapperBlur.classList.toggle('wrapper-overlay');
 		overlay.style.display = 'block';
-		pizzaLoadImg.style.display = 'block';
+		pizzaLoadBlock.style.display = 'flex';
 		generateBlock.classList.remove('generate__block-show');
 
 		bodyLock();
 		imageGenerate();
 		utmChecker();
+
+		// const countdownFn = num => {
+		// 	document.querySelector('.timer-seconds').textContent = num;
+		// 	console.log(num);
+		// };
+
+		// let numMin;
+
+		// numMin = setTimeout(function countdownFn(actualRndmNum) {
+		// 	console.log(actualRndmNum);
+		// 	numMin = setTimeout(countdownFn, 1000);
+		// }, actualRndmNum);
+
+		let timerId = setTimeout(function tick() {
+			document.querySelector('.timer-seconds').textContent = actualRndmNum;
+			actualRndmNum--;
+			timerId = setTimeout(tick, 1000);
+		}, actualRndmNum);
+
+		console.log(actualRndmNum);
 		setTimeout(() => {
 			overlay.style.display = 'none';
 			wrapperBlur.classList.toggle('wrapper-overlay');
@@ -96,11 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				generatePromoBlock.style.display = 'none';
 			}
-			pizzaLoadImg.style.display = 'none';
+			pizzaLoadBlock.style.display = 'none';
 			generateBlock.classList.add('generate__block-show');
 			generateLink.style.display = 'inline-block';
 			bodyUnlock();
-		}, getRandomInt() * 1000);
+			clearTimeout(timerId);
+		}, actualRndmNum * 1000);
 	};
 
 	//generate button listener

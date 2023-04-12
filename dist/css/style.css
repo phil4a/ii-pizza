@@ -342,30 +342,8 @@ body::after {
   position: absolute;
   z-index: 2;
   top: 7.5rem;
-}
-
-@supports (top: clamp( 6.25rem , 5.853960396rem  +  1.9801980198vw , 7.5rem )) {
-  .hero__pizza {
-    top: clamp( 6.25rem , 5.853960396rem  +  1.9801980198vw , 7.5rem );
-  }
-}
-
-@supports not (top: clamp( 6.25rem , 5.853960396rem  +  1.9801980198vw , 7.5rem )) {
-  .hero__pizza {
-    top: calc(6.25rem + 1.25 * (100vw - 20rem) / 63.125);
-  }
-}
-
-@supports (right: clamp( -18.75rem , -30.2351485149rem  +  57.4257425743vw , 17.5rem )) {
-  .hero__pizza {
-    right: clamp( -18.75rem , -30.2351485149rem  +  57.4257425743vw , 17.5rem );
-  }
-}
-
-@supports not (right: clamp( -18.75rem , -30.2351485149rem  +  57.4257425743vw , 17.5rem )) {
-  .hero__pizza {
-    right: calc(-18.75rem + 36.25 * (100vw - 20rem) / 63.125);
-  }
+  top: 7.5rem;
+  right: 17.5rem;
 }
 
 @supports (width: clamp( 31.25rem , 27.6856435644rem  +  17.8217821782vw , 42.5rem )) {
@@ -710,7 +688,7 @@ body::after {
   }
 }
 
-#pizza {
+.pizza-loader {
   display: none;
   position: fixed;
   top: 50%;
@@ -719,6 +697,36 @@ body::after {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+  font-size: 1.25rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3333333333;
+}
+
+.timer span {
+  font-family: "TT Travels Next ExtraBold";
+  font-size: 2.5rem;
 }
 
 .no-webp .generate{
@@ -1148,6 +1156,17 @@ body::after {
   }
 }
 
+@media (max-width: 100rem) {
+  .hero__pizza {
+    top: -2.875rem;
+    right: 2.25rem;
+  }
+
+  .hero__human-hand {
+    display: none;
+  }
+}
+
 @media (max-width: 60.06125em) {
   .menu__body {
     display: -webkit-box;
@@ -1242,8 +1261,9 @@ body::after {
             transform: rotate(45deg);
   }
 
-  .hero__human-hand {
-    display: none;
+  .hero__pizza {
+    top: 6.25rem;
+    right: -18.75rem;
   }
 }
 

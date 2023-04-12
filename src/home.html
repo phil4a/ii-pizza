@@ -2,7 +2,13 @@
 <html lang="ru">
 	@@include('html/_head.htm',{ "title":"Главная" })
 	<body>
-		<canvas id="pizza"></canvas>
+		<div class="pizza-loader">
+			<canvas id="pizza"></canvas>
+			<div class="timer">
+				<p>Сгенерирую пиццу через...</p>
+				<span class="timer-seconds"></span>
+			</div>
+		</div>
 		<div class="overlay"></div>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})

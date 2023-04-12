@@ -1,10 +1,28 @@
 #pizza {
+}
+.pizza-loader {
 	display: none;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	z-index: 200;
 	transform: translate(-50%, -50%);
+	align-items: center;
+	flex-direction: column;
+}
+.timer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: rem(10);
+	font-size: rem(20);
+	color: #fff;
+	text-align: center;
+	line-height: math.div(20, 15);
+	span {
+		font-family: $ttFont;
+		font-size: rem(40);
+	}
 }
 
 .generate {
