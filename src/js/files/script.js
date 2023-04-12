@@ -4,6 +4,7 @@ import { bodyLock, bodyUnlock, isMobile } from './functions.js';
 import { flsModules } from './modules.js';
 import { Pizza } from './pizza-loader.js';
 import { imageGenerate } from './imageGenerate.js';
+import { utmChecker } from './utmChecker.js';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger.js';
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const pizzaLoadImg = document.querySelector('#pizza');
 	const generateBlock = document.querySelector('.generate__block');
 	const generateLink = document.querySelector('.generate__link');
+	const generatePromoBlock = document.querySelector('.generate__promo-block');
+
 	const makePizzaBtn = document.querySelector('.prefs__button');
 
 	//animation
@@ -78,11 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		overlay.style.display = 'block';
 		pizzaLoadImg.style.display = 'block';
 		generateBlock.classList.remove('generate__block-show');
+
 		bodyLock();
 		imageGenerate();
+		utmChecker();
 		setTimeout(() => {
 			overlay.style.display = 'none';
 			wrapperBlur.classList.toggle('wrapper-overlay');
+			if (document.querySelector('.generate__promo').innerHTML.length > 0) {
+				console.log(
+					document.querySelector('.generate__promo').innerHTML.length
+				);
+				generatePromoBlock.style.display = 'block';
+			} else {
+				generatePromoBlock.style.display = 'none';
+			}
 			pizzaLoadImg.style.display = 'none';
 			generateBlock.classList.add('generate__block-show');
 			generateLink.style.display = 'inline-block';

@@ -8,7 +8,6 @@
 }
 
 .generate {
-	margin: rem(50) 0;
 	padding-top: rem(40);
 	background-image: url(@img/pizza-gen_bg.jpg);
 	&__container {
@@ -42,7 +41,27 @@
 	&__image {
 		width: 100%;
 	}
-
+	&__suggest {
+		display: flex;
+		margin-top: rem(20);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		@include adaptiveValue('gap', 40, 15);
+		p {
+			flex-basis: 200px;
+			font-size: rem(20);
+			font-weight: 600;
+			line-height: math.div(20, 14);
+		}
+		span {
+			font-family: $ttFont;
+			color: $accentColor;
+		}
+	}
+	&__promo-block {
+		display: none;
+	}
 	&__link {
 		font-family: $ttFont;
 		font-size: rem(16);
