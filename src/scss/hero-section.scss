@@ -64,9 +64,12 @@
 	&__title {
 		width: 50%;
 		font-weight: 700;
-		@include adaptiveValue('font-size', 96, 26);
-		@include adaptiveValue('line-height', 117, 38);
+		@include adaptiveValue('font-size', 81, 24);
+		@include adaptiveValue('line-height', 105, 34);
 		text-transform: uppercase;
+		span {
+			color: #ffb42c;
+		}
 	}
 
 	&__button {

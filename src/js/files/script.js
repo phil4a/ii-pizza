@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		x: 20,
 		y: -20,
 		rotation: 5,
-		duration: 15,
+		duration: 12,
 		yoyoEase: true,
 		repeat: -1,
 	});
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		x: -20,
 		y: 20,
 		rotation: -5,
-		duration: 15,
+		duration: 12,
 		yoyoEase: true,
 		repeat: -1,
 	});
@@ -88,38 +88,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		imageGenerate();
 		utmChecker();
 
-		// const countdownFn = num => {
-		// 	document.querySelector('.timer-seconds').textContent = num;
-		// 	console.log(num);
-		// };
-
-		// let numMin;
-
-		// numMin = setTimeout(function countdownFn(actualRndmNum) {
-		// 	console.log(actualRndmNum);
-		// 	numMin = setTimeout(countdownFn, 1000);
-		// }, actualRndmNum);
-
 		let timerId = setTimeout(function tick() {
 			document.querySelector('.timer-seconds').textContent = actualRndmNum;
 			actualRndmNum--;
 			timerId = setTimeout(tick, 1000);
 		}, actualRndmNum);
 
-		console.log(actualRndmNum);
 		setTimeout(() => {
 			overlay.style.display = 'none';
 			wrapperBlur.classList.toggle('wrapper-overlay');
 			if (document.querySelector('.generate__promo').innerHTML.length > 0) {
-				console.log(
-					document.querySelector('.generate__promo').innerHTML.length
-				);
 				generatePromoBlock.style.display = 'block';
 			} else {
 				generatePromoBlock.style.display = 'none';
 			}
 			pizzaLoadBlock.style.display = 'none';
 			generateBlock.classList.add('generate__block-show');
+			gsap.to(generateBlock, {
+				ease: 'sine.inOut',
+				rotation: 5,
+				duration: 8,
+				yoyoEase: true,
+				repeat: -1,
+			});
 			generateLink.style.display = 'inline-block';
 			bodyUnlock();
 			clearTimeout(timerId);

@@ -286,6 +286,10 @@ body::after {
       flex-wrap: nowrap;
 }
 
+.header__container a {
+  cursor: pointer;
+}
+
 .header img {
   width: 10.625rem;
 }
@@ -448,28 +452,32 @@ body::after {
   text-transform: uppercase;
 }
 
-@supports (font-size: clamp( 1.625rem , 0.2388613861rem  +  6.9306930693vw , 6rem )) {
+@supports (font-size: clamp( 1.5rem , 0.3712871287rem  +  5.6435643564vw , 5.0625rem )) {
   .hero__title {
-    font-size: clamp( 1.625rem , 0.2388613861rem  +  6.9306930693vw , 6rem );
+    font-size: clamp( 1.5rem , 0.3712871287rem  +  5.6435643564vw , 5.0625rem );
   }
 }
 
-@supports not (font-size: clamp( 1.625rem , 0.2388613861rem  +  6.9306930693vw , 6rem )) {
+@supports not (font-size: clamp( 1.5rem , 0.3712871287rem  +  5.6435643564vw , 5.0625rem )) {
   .hero__title {
-    font-size: calc(1.625rem + 4.375 * (100vw - 20rem) / 63.125);
+    font-size: calc(1.5rem + 3.5625 * (100vw - 20rem) / 63.125);
   }
 }
 
-@supports (line-height: clamp( 2.375rem , 0.8106435644rem  +  7.8217821782vw , 7.3125rem )) {
+@supports (line-height: clamp( 2.125rem , 0.7190594059rem  +  7.0297029703vw , 6.5625rem )) {
   .hero__title {
-    line-height: clamp( 2.375rem , 0.8106435644rem  +  7.8217821782vw , 7.3125rem );
+    line-height: clamp( 2.125rem , 0.7190594059rem  +  7.0297029703vw , 6.5625rem );
   }
 }
 
-@supports not (line-height: clamp( 2.375rem , 0.8106435644rem  +  7.8217821782vw , 7.3125rem )) {
+@supports not (line-height: clamp( 2.125rem , 0.7190594059rem  +  7.0297029703vw , 6.5625rem )) {
   .hero__title {
-    line-height: calc(2.375rem + 4.9375 * (100vw - 20rem) / 63.125);
+    line-height: calc(2.125rem + 4.4375 * (100vw - 20rem) / 63.125);
   }
+}
+
+.hero__title span {
+  color: #ffb42c;
 }
 
 .hero__button {

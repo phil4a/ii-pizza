@@ -2,12 +2,12 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Нейросеть создает пиццу</title>
 	<meta charset="UTF-8" />
 	<meta name="theme-color" content="#2b8bcb" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230412224908" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230413142735" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a href="/"><img src="img/logo.svg" alt="" /></a>
+				<a href="" data-goto=".hero" data-goto-header data-goto-speed="500"><img src="img/logo.svg" alt="" /></a>
 				<div class="header__menu menu">
 					<button type="button" class="menu__icon icon-menu">
 						<span></span>
@@ -33,16 +33,16 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<a href="#howto" class="menu__link">Как работает?</a>
+								<a href="" data-goto=".howto" data-goto-header data-goto-speed="500" class="menu__link">Как работает?</a>
 							</li>
 							<li class="menu__item">
-								<a href="#makepizza" class="menu__link">Конструктор пиццы</a>
+								<a href="" data-goto=".generate" data-goto-header data-goto-speed="500" class="menu__link">Конструктор пиццы</a>
 							</li>
 							<li class="menu__item">
-								<a href="#process" class="menu__link">Процесс создания</a>
+								<a href="" data-goto=".process" data-goto-header data-goto-speed="500" class="menu__link">Процесс создания</a>
 							</li>
 							<li class="menu__item">
-								<a href="#makeof" class="menu__link">Создание</a>
+								<a href="" data-goto=".grandson" data-goto-header data-goto-speed="500" class="menu__link">Письмо</a>
 							</li>
 						</ul>
 					</nav>
@@ -57,8 +57,10 @@
 				<picture><source srcset="img/hero/human-hand.webp" type="image/webp"><img class="hero__human-hand" src="img/hero/human-hand.png" alt="рука человека" /></picture>
 				<div class="hero__container">
 					<div class="hero__text">
-						<h1 class="hero__title">Нейросеть создает пиццу</h1>
-						<button class="hero__button">Попробовать</button>
+						<h1 class="hero__title">Создай свою, <span>идеальную</span> пиццу</h1>
+						<button class="hero__button" data-goto=".generate" data-goto-header data-goto-speed="800">
+							Попробовать
+						</button>
 					</div>
 				</div>
 			</section>
@@ -281,7 +283,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20230412224908"></script>
+	<script src="js/app.min.js?_v=20230413142735"></script>
 
 </body>
 

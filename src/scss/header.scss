@@ -13,6 +13,9 @@
 		align-items: center;
 		gap: rem(50);
 		flex-wrap: nowrap;
+		a {
+			cursor: pointer;
+		}
 	}
 	img {
 		width: rem(170);
