@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Нейросеть создает пиццу</title>
+	<meta charset="UTF-8" />
+	<meta name="theme-color" content="#2b8bcb" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230414104054" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function(m, e, t, r, i, k, a) {
+			m[i] =
+				m[i] ||
+				function() {
+					(m[i].a = m[i].a || []).push(arguments);
+				};
+			m[i].l = 1 * new Date();
+			for (var j = 0; j < document.scripts.length; j++) {
+				if (document.scripts[j].src === r) {
+					return;
+				}
+			}
+			(k = e.createElement(t)),
+			(a = e.getElementsByTagName(t)[0]),
+			(k.async = 1),
+			(k.src = r),
+			a.parentNode.insertBefore(k, a);
+		})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+		ym(93200183, 'init', {
+			clickmap: true,
+			trackLinks: true,
+			accurateTrackBounce: true,
+			webvisor: true,
+		});
+	</script>
+	<noscript>
+		<div>
+			<picture><source srcset="https://mc.yandex.ru/watch/93200183" type="image/webp"><img src="https://mc.yandex.ru/watch/93200183" style="position: absolute; left: -9999px" alt="" /></picture>
+		</div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+	<div class="pizza-loader">
+		<canvas id="pizza"></canvas>
+		<div class="timer">
+			<p>Сгенерирую пиццу через...</p>
+			<span class="timer-seconds"></span>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="" data-goto=".hero" data-goto-header data-goto-speed="500"><img src="img/logo.svg" alt="" /></a>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="" data-goto=".howto" data-goto-header data-goto-speed="500" class="menu__link">Как работает?</a>
+							</li>
+							<li class="menu__item">
+								<a href="" data-goto=".generate" data-goto-header data-goto-speed="500" class="menu__link">Конструктор пиццы</a>
+							</li>
+							<li class="menu__item">
+								<a href="" data-goto=".process" data-goto-header data-goto-speed="500" class="menu__link">Процесс создания</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<section class="hero">
+				<picture><source srcset="img/hero/ii-pizza-old.webp" type="image/webp"><img class="hero__pizza" src="img/hero/ii-pizza-old.png" alt="пицца из нейросети" /></picture>
+				<picture><source srcset="img/hero/robot-hand.webp" type="image/webp"><img class="hero__robot-hand" src="img/hero/robot-hand.png" alt="рука нейросети" /></picture>
+				<picture><source srcset="img/hero/human-hand.webp" type="image/webp"><img class="hero__human-hand" src="img/hero/human-hand.png" alt="рука человека" /></picture>
+				<div class="hero__container">
+					<div class="hero__text">
+						<h1 class="hero__title">Создай свою, <span>идеальную</span> пиццу</h1>
+						<button class="hero__button" data-goto=".generate" data-goto-header data-goto-speed="800">
+							Попробовать
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="howto">
+				<div class="howto__container">
+					<div class="howto__pizza"><img src="img/how-to pizza.png" alt="" /></div>
+					<div class="howto__text text-howto">
+						<div class="text-howto__desc">
+							<h2 class="text-howto__title">«От идеи к реализации»</h2>
+							<div class="text-howto__text">
+								<p>
+									Создание нейросетью совершенной пиццы — это увлекательный и сложный
+									процесс, требующий большого количества данных и многочисленных
+									экспериментов. В начале проекта я собрал
+									<a href="https://drive.google.com/drive/folders/1fKuQ7ET4_v9k2oPxoD9MMjmH01FMdNJK?usp=sharing" target="_blank" style="color: aqua">
+										базу данных</a>
+									сотен различных изображений пиццы, включающих в себя старые картины
+									с фотографиями и обработал их для простоты обучения.
+								</p>
+								<p>
+									Далее, взяв за основу диффузионную модель, начал обучать нейросеть
+									на основе имеющихся данных. На этапе обучения, модель была способна
+									анализировать тысячи вариантов сочетаний ингредиентов и выдавать
+									оценки каждой пиццы в соответствии с различными критериями, такими
+									как вкус, текстура, аромат и т.д, благодаря одному из способов
+									обучения - обратному распространению ошибок.
+								</p>
+								<h2 class="text-howto__title">«Нейросеть + Пиззато»</h2>
+								<p>
+									После того, как мною было получено достаточно данных, а нейросеть
+									достаточно “умна”, мы с Pizzaто начали экспериментировать с
+									различными сочетаниями ингредиентов, используя рекомендации
+									нейросети. Мы проводили множество тестовых замесов теста, различных
+									соусов и начинок, и каждый раз получали обратную связь от нейросети,
+									чтобы улучшить рецептуру.
+								</p>
+								<p>
+									Постепенно мы пришли к идеальному сочетанию ингредиентов, которое
+									называем "совершенной пиццей". Это была пицца с тонким тестом,
+									ароматным томатным соусом, свежими овощами и сыром, которые были
+									идеально подобраны для создания незабываемого вкуса.
+								</p>
+								<h2 class="text-howto__title">«Промежуточный итог»</h2>
+								<p>
+									В конечном итоге, наша нейросеть помогла нам создать идеальную
+									пиццу, которая стала нашим лучшим рецептом. Мы продолжаем
+									использовать нашу модель для экспериментов с новыми сочетаниями
+									ингредиентов и улучшения наших рецептов, чтобы наши клиенты могли
+									наслаждаться самой вкусной пиццей.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="generate">
+				<div class="generate__container">
+					<h2 class="generate__title">Создать свою пиццу</h2>
+					<form action="" class="generate__prefs prefs">
+						<div class="prefs__list">
+							<div class="prefs__radio">
+								<input class="prefs__custom" type="radio" id="margo" name="ingredients" value="margo" checked />
+								<label for="margo">Без добавок</label>
+							</div>
+							<div class="prefs__radio">
+								<input class="prefs__custom" type="radio" id="pepperoni" name="ingredients" value="pepperoni" />
+								<label for="pepperoni">Колбаски Пепперони</label>
+							</div>
+							<div class="prefs__radio">
+								<input class="prefs__custom" type="radio" id="chicken" name="ingredients" value="chicken" />
+								<label for="chicken">С курицей</label>
+							</div>
+							<div class="prefs__radio">
+								<input class="prefs__custom" type="radio" id="bologna" name="ingredients" value="bologna" />
+								<label for="bologna">С беконом</label>
+							</div>
+							<div class="prefs__radio">
+								<input class="prefs__custom" type="radio" id="meat" name="ingredients" value="meat" />
+								<label for="meat">Много мяса</label>
+							</div>
+						</div>
+						<button type="submit" class="prefs__button">Создать пиццу</button>
+					</form>
+					<div class="generate__pizza">
+						<div class="generate__block">
+							<picture>
+								<source class="generate__image-webp" srcset="#" type="image/png" />
+								<img class="generate__image" src="#" alt="" />
+							</picture>
+						</div>
+					</div>
+					<div class="generate__suggest">
+						<a href="#" target="_blank" class="generate__link">Заказать</a>
+						<p class="generate__promo-block">
+							Ваш промокод <span class="generate__promo"></span>
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="process">
+				<div class="process__container">
+					<h2 class="process__title">Процесс создания</h2>
+					<div class="process__text text-process">
+						<div class="text-process__left">
+							<p>
+								Программист-любитель из Новосибирска менее чем за год разработал
+								нейросеть, которая нашла Золотое сечение у неаполитанской пиццы с
+								помощью старых итальянских картин известного в прошлом пиццайоло и
+								местной пиццерии. Владислав начал увлекаться и изучать нейросети еще в
+								2017 году. Чтением книг, изучением необходимой программно-языковой
+								базы и большим прорывом нейросетей в 2021 году, как оказалось, дело не
+								ограничилось. Чуть более года назад в интернете он познакомился с
+								Джанлукой — праправнуком знаменитого в конце XIX века неапольского
+								пиццайоло Пиззато Манчини. Джанлука как раз искал человека, который
+								смог бы найти применение более чем четырехстам картинам и фотографиям
+								пицц легендарного дедушки.
+							</p>
+
+							<p>
+								Пиззато Манчини (настоящее имя Донато Манчини (итал. Donato Mancini))
+								— итальянский пиццайолло и предприниматель. Повлиявший на
+								популяризацию пиццы среди широких слоев населения, после чего ее
+								перестали воспринимать как пищу для бедных. Разработал множество
+								начинок, ставших классическими, и закрепил традиционный рецепт пиццы
+								на тонком тесте. Картины и фотокарточки пицц долгое время считались
+								утерянными. Обнаружить их удалось только в 1990-х годах правнуку
+								Пиззато, Антонио Манчини. Произведения были спрятаны в подвале
+								родового поместья Манчини около Неаполя, всего более 150 картин и 300
+								шт. фотографии. Они были отреставрированы и оцифрованы под
+								руководством Антонио.
+							</p>
+							<p>
+								Суши, пиццы, бургеры — фастфуд в своем привычном виде давно не являл
+								свету что-то новое и свежее. Так же подумал и Влад, вспомнив свое
+								старое увлечение нейросетями. Менее чем за год написал одну из них и
+								попросил ее сгенерировать пиццу с идеальными итальянскими пропорциями
+								XIX века. Получив первые сносные результаты, приходила пора
+								задумываться об изготовлении пиццы в real life. По сгенерированным
+								изображениям можно было сделать выводы о составе пицц: среднее
+								количество колбас в пепперони, количество и состав специй, объем
+								шампиньонов и даже необходимую порцию итальянского сыра для прекрасной
+								и доступной Маргариты. Печь самому — идея не из удачных, и тогда
+								Владислав обратился в ресторан Pizzato. Тогда-то весь пазл и сошелся,
+								теперь каждый житель правого берега или Академгородка может
+								сгенерировать себе пиццу и почувствовать на вкус Италию XIX века.
+							</p>
+						</div>
+						<div class="text-process__right">
+							<h3 class="process__subtitle">
+								Письмо-обращение к жителям Новосибирска от Джанлуки Манчини
+							</h3>
+							<p style="font-style: italic; line-height: 1.5">
+								“È stato molto emozionante scoprire la collezione di dipinti e
+								fotografie del mio bisnonno nel magazzino di famiglia. Tutti in
+								famiglia sapevano che nonno Pissato era uno dei migliori pizzaioli
+								italiani di tutti i tempi! Ma non sapevo cosa fare di questo baule,
+								pieno di vecchi disegni e fotografie, conservato in condizioni quasi
+								perfette. Voglio esprimere la mia profonda gratitudine a Vladislav
+								Korunsky per aver visto l'opportunità e dopo più di cento anni -
+								riportare il nostro nome ai vertici della produzione di pizza. La
+								pizza Golden Ratio di Pissato Mancini è una nuova era nella cucina di
+								Sua Maestà!”
+							</p>
+							<h3 class="process__subtitle" style="padding-top: 20px">
+								Перевод на русский язык
+							</h3>
+							<p style="font-style: italic; line-height: 1.5">
+								“Было довольно трепетно найти прадедовскую коллекцию картин и
+								фотографии на фамильном складе. Все в нашей семье знали, что дед
+								Писсато был одним из лучших пиццайоло Италии всех времен! Но а я не
+								знал, что делать с этим сундуком, набитым старыми рисунками и
+								фотографиями, которые сохранились практически в идеальном состоянии.
+								Хочу выразить огромную благодарность Корунскому Владиславу, за то что
+								увидел возможность и спустя более сотню лет - вернул нашу фамилию на
+								вершину пиццамэйкерства. Пицца с Золотым сечением Писсато Манчини -
+								это новая эра в приготовлении её величества!”
+							</p>
+						</div>
+					</div>
+					<a href="" class="process__button">Wikipedia</a>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__copyright">
+					<a href="https://pizzato.rest" target="_blank">© Pizzato 2023</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- <div id="loading" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">Text</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20230414104054"></script>
+
+</body>
+
+</html>

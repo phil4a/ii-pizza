@@ -1,5 +1,5 @@
 .process {
-	background-image: url(@img/process_bg.jpg);
+	// background-image: url(@img/process_bg.jpg);
 	background-repeat: no-repeat;
 	padding: rem(70) 0;
 	&__container {
@@ -10,6 +10,12 @@
 		font-size: rem(30);
 		line-height: math.div(42, 30);
 		margin-bottom: rem(23);
+	}
+
+	&__subtitle {
+		font-weight: 600;
+		font-size: rem(22);
+		margin-bottom: rem(20);
 	}
 
 	&__text {
@@ -42,7 +48,7 @@
 	grid-template-columns: 1fr;
 	gap: rem(50);
 	font-size: rem(16);
-	line-height: math.div(20, 16);
+	line-height: math.div(22, 16);
 	@media (min-width: $mobile) {
 		grid-template-columns: 1fr 1fr;
 		gap: rem(100);
