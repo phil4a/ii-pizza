@@ -2,6 +2,7 @@
 import { bodyLock, bodyUnlock, isMobile } from './functions.js';
 // Подключение списка активных модулей
 import { flsModules } from './modules.js';
+import { gotoBlock } from './scroll/gotoblock.js';
 import { Pizza } from './pizza-loader.js';
 import { imageGenerate } from './imageGenerate.js';
 import { utmChecker } from './utmChecker.js';
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			generateLink.style.display = 'inline-block';
 			bodyUnlock();
 			clearTimeout(timerId);
+			gotoBlock('.generate__block', true, 1500);
 		}, actualRndmNum * 1000);
 	};
 

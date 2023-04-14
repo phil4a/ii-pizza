@@ -6209,6 +6209,7 @@
                     generateLink.style.display = "inline-block";
                     bodyUnlock();
                     clearTimeout(timerId);
+                    gotoblock_gotoBlock(".generate__block", true, 1500);
                 }), 1e3 * actualRndmNum);
             };
             makePizzaBtn.addEventListener("click", (e => {

@@ -985,7 +985,11 @@ body::after {
   }
 }
 
+.no-webp .process{
+  background-image: url(../img/process_bg.jpg); }
+
 .process {
+  background-color: rgba(255, 255, 255, 0.5);
   background-repeat: no-repeat;
   padding: 4.375rem 0;
 }
@@ -1272,3 +1276,5 @@ body::after {
 .webp .howto{ background-image: url(../img/how-to_bg.webp); }
 
 .webp .generate{ background-image: url(../img/pizza-gen_bg.webp); }
+
+.webp .process{ background-image: url(../img/process_bg.webp); }
