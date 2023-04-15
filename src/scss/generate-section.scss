@@ -20,6 +20,7 @@
 	text-align: center;
 	line-height: math.div(20, 15);
 	span {
+		height: rem(40);
 		font-family: $ttFont;
 		font-size: rem(40);
 	}

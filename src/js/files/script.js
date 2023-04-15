@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return Math.floor(Math.random() * (8 - 4)) + 4;
 		};
 
-		let actualRndmNum = getRandomInt();
+		let actualRndmNum = getRandomInt() + 2;
 
 		wrapperBlur.classList.toggle('wrapper-overlay');
 		overlay.style.display = 'block';
@@ -89,11 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		imageGenerate();
 		utmChecker();
 
-		let timerId = setTimeout(function tick() {
-			document.querySelector('.timer-seconds').textContent = actualRndmNum;
-			actualRndmNum--;
-			timerId = setTimeout(tick, 1000);
-		}, actualRndmNum);
+		function countdown(num) {
+			document.querySelector('.timer-seconds').style.opacity = '1';
+			let timerId = setTimeout(function tick() {
+				if (num > 0) {
+					document.querySelector('.timer-seconds').textContent = num;
+					num--;
+					console.log(num);
+				} else {
+					clearTimeout(timerId);
+				}
+				timerId = setTimeout(tick, 1000);
+			}, actualRndmNum + 2000);
+		}
+
+		setTimeout(countdown(actualRndmNum), actualRndmNum + 2000);
 
 		setTimeout(() => {
 			overlay.style.display = 'none';
@@ -114,9 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 			generateLink.style.display = 'inline-block';
 			bodyUnlock();
-			clearTimeout(timerId);
+			document.querySelector('.timer-seconds').textContent = '';
+
 			gotoBlock('.generate__block', true, 1500);
-		}, actualRndmNum * 1000);
+		}, (actualRndmNum + 2) * 1000);
 	};
 
 	//generate button listener
